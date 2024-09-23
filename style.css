@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,body{
+    width: 100vw;
+    height: 100vh;
+  overflow-x: clip;
+    background-color: black;
+   scroll-behavior: smooth;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  #landing-image{
+    background-image: url(1x/cover2.png) ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0px;
+    display: flex;
+    position: relative;
+  }
+
+  .menu{
+    width: 100%;
+position: fixed;
+  padding: 30px;
+  background-color: transparent;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  z-index: 20000;
+  top: 0;
+  }
+
+  #logomenu{
+  
+    background-image: url(1x/Asset\ 15.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+   width: 5vw;
+   height: 5vw;
+   background-size: contain;
+   transition: background-image 0.5s ease; /* Smooth transition effect */
+  }
+
+  #logomenu:hover {
+    background-image: url('1x/Asset\ 16.png'); /* Background image on hover */
+}
+
+#logomenu2{
+  
+  background-image: url(1x/Asset\ 21.png) ;
+  background-repeat: no-repeat;
+  background-position: center;
+ width: 5vw;
+ height: 5vw;
+ background-size: contain;
+ transition: background-image 0.5s ease; /* Smooth transition effect */
+}
+
+#logomenu2:hover {
+  background-image: url('1x/Asset\ 19.png'); /* Background image on hover */
+}
+
+  #logo2{
+    position: absolute;
+    background-image: url(1x/Asset\ 13.png) ;
+    background-repeat: no-repeat;
+    background-position: center;
+  width: 500px;
+  height: 490px;
+   background-size: contain;
+align-self: center;
+margin-left: 10%;
+transition: filter 0.5s ease-in-out, transform 0.2s ease-in-out;; /* Smooth transition for the glow effect */
+  }
+ 
+#logo2:hover {
+  filter: brightness(2.0)  ; /* Glow with brightness, broken look with contrast and blur */
+  transform: rotate(2deg) scale(1.05); /* Adds a slight tilt and scale for the broken effect */
+
+}
+
+#menuinside {
+  background-image: url(1x/background-02.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('1x/new-03.png'); /* Adjust the path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 9999; /* Ensure it's above other content */
+    transition: opacity 1s; /* For smooth fade-out */
+}
+
+#countdown {
+    color:Black; /* Countdown text color */
+    font-family: 'Rowdies', sans-serif; /* Use the Google Font */
+    font-size: 800px; /* Set desired font size */
+    font-weight: 900;
+    letter-spacing: 10px; /* Adjust space between characters (numbers) */
+    text-align: center; /* Center the text */
+}
+
+p{
+  font-size: 30px;
+  font-family: 'Rowdies';
+  width: 60%;
+}
+
+h1 {
+  font-family: 'Rowdies';
+  font-size: 80px;
+
+  
+}
+h2{
+  font-family: 'Rowdies';
+  font-size: 40px;
+  font-weight: 800;
+  color: #E5D11C;
+  letter-spacing: 10px;
+ background-color: #C94618;
+ padding: 5px;
+ border-radius: 10px;
+
+}
+
+#landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Đặt nội dung ở dưới cùng */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  height: 100vh; /* Chiếm toàn bộ chiều cao của viewport */
+}
+#click {
+  margin-bottom: 20px; /* Khoảng cách từ đáy */
+  text-align: center; /* Căn giữa nội dung bên trong */
+  align-self: center;
+  justify-self: center;
+  color:#ffffff;
+  animation: glitch 1s ease infinite;
+  animation-direction: alternate;
+  position: absolute;
+ 
+}
+
+
+
+@keyframes glitch {
+  0% {
+     opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    
+    
+  }
+}
+
+#video-container {
+  position: relative;
+  text-align: center;
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+}
+
+#myVideo {
+  transition: filter 0.6s ease-out; /* Smooth transition for blur */
+}
+
+.blur {
+
+    filter: blur(30px); /* Adjust the blur radius as needed */
+    transition: filter 0.6s ease-in-out; /* Smooth transition */
+
+}
+
+
+#text-preview {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+  font-family:'Rowdies' ;
+  font-weight: 600;
+  color:#E5D11C;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease-out; /* Smooth fade */
+}
+/* Visible state for smooth fade-in */
+#text-preview.visible {
+  display: block;
+  opacity: 1;
+}
+
+#room{
+  background-image: url(1x/house.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+
+#logomenu3{
+  
+  background-image: url(1x/Asset\ 21.png) ;
+  background-repeat: no-repeat;
+  background-position: center;
+ width: 5vw;
+ height: 5vw;
+ background-size: contain;
+ transition: background-image 0.5s ease; /* Smooth transition effect */
+ align-self: flex-start;
+ margin-right: auto;
+}
+
+#logomenu3:hover {
+  background-image: url('1x/Asset\ 19.png'); /* Background image on hover */
+}
+
+#girl{
+  background-image: url(Comp2.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+  
+}
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start invisible */
+  }
+  to {
+      opacity: 1; /* Fully visible */
+  }
+}
+
+ 
+#scoreboard {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Rowdies';
+  font-size: 30px;
+  color: white;
+  background-color:#C94618; /* Slight transparency */
+  padding: 10px;
+  border: black solid 4px;
+  border-radius: 10px;
+}
+#timer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-family: 'Rowdies';
+  font-size: 30px;
+  color: white;
+  background-color: #C94618; /* Slight transparency */
+  border: black solid 4px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+    #game-over {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Rowdies';
+      font-size: 100px;
+      background-color: #E5D11C;
+      padding: 20px;
+      border-radius: 30px;
+      color: #ffffff;
+      text-align: center;
+      border: black solid 4px;
+      display: none; /* Hidden by default */
+    }
+
+    #restart-button {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  font-family: 'Rowdies';
+  font-size: 30px;
+  background-color: #119383;
+  color: white;
+  border: black solid 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+#restart-button:hover {
+background-color: #000000; /* Darker green */
+}
+
+#subtitles {
+  position: absolute;
+  bottom: 10%; /* Position near the bottom of the page */
+  width: 100%; /* Full width */
+  text-align: center; /* Center the text horizontally */
+  font-size: 40px; /* Adjust subtitle text size */
+  color: white; /* Text color */
+  font-family:'Rowdies' ; /* Font style */
+
+ 
+  margin: 0 auto;
+}
+
+#one {
+  background-image: url('1x/Asset%2023.png'); /* Ensure correct path */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vw;
+  background-size: contain;
+  position: absolute;
+  right: 230px;
+  opacity: 0; /* Start with zero opacity */
+  animation: fadeup 0.5s ease 9s forwards; /* Fade in after 7 seconds */
+  transition: background-image 0.5s ease; /* Smooth transition effect */
+}
+
+#one:hover {
+  background-image: url('1x/Asset%2026.png'); /* Background image on hover */
+  opacity: 1; /* Ensure it is visible on hover */
+}
+
+@keyframes fadeup {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#two {
+  background-image: url('1x/Asset%2024.png'); /* Ensure correct path */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vw;
+  background-size: contain;
+  position: absolute;
+  right: 120px;
+  bottom: 120px;
+  opacity: 0; /* Start with zero opacity */
+  animation: fadeup 0.5s ease 9s forwards; /* Fade in after 7 seconds */
+  transition: background-image 0.5s ease; /* Smooth transition effect */
+}
+
+#two:hover {
+  background-image: url('1x/Asset%2027.png'); /* Background image on hover */
+  opacity: 1; /* Ensure it is visible on hover */
+}
+
+#three {
+  background-image: url('1x/Asset%2025.png'); /* Ensure correct path */
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 5vw;
+  height: 5vw;
+  background-size: contain;
+  position: absolute;
+  left: 300px;
+  bottom: 200px;
+  opacity: 0; /* Start with zero opacity */
+  animation: fadeup 0.5s ease 9s forwards; /* Fade in after 7 seconds */
+  transition: background-image 0.5s ease; /* Smooth transition effect */
+}
+
+#three:hover {
+  background-image: url('1x/Asset%2028.png'); /* Background image on hover */
+  opacity: 1; /* Ensure it is visible on hover */
+}
+
+#logomenu4{
+  
+  background-image: url(1x/Asset\ 29.png) ;
+  background-repeat: no-repeat;
+  background-position: center;
+ width: 5vw;
+ height: 5vw;
+ background-size: contain;
+ transition: background-image 0.5s ease; /* Smooth transition effect */
+ align-self: flex-start;
+ margin-right: auto;
+}
+
+#logomenu4:hover {
+  background-image: url('1x/Asset\ 30.png'); /* Background image on hover */
+}
+
+#room1{
+  background-image: url(room1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  flex-direction: column;
+  position: relative;
+
+}
+
+#room2{
+  background-image: url(rooom2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  flex-direction: column;
+  position: relative;
+
+}
+
+#lastpage{
+  background-image: url(backgroundend.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  flex-direction: column;
+  position: relative;
+}
+
+#playButton {
+  display: inline-block; /* Makes it like a button */
+  padding: 10px 30px; /* Button padding */
+  background-color: #E5D11C; /* Button color */
+  color: white; /* Text color */
+  text-decoration: none; /* Removes underline */
+  font-family:'Rowdies' ;
+  font-size: 40px;
+  border-radius: 10px; /* Rounded corners */
+  border: #000000 solid 5px;
+  margin-top: 50px; /* Space above the button */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+#playButton:hover {
+  background-color: #45a049; /* Darker shade on hover */
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  display: flex;
+ align-items: center;
+ justify-content: center;
+ opacity: 1; /* Initial opacity */
+ transition: opacity 0.5s ease; /* Smooth transition for opacity */
+
+}
+
+.subtitle p {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  font-family:'Rowdies' ;
+  color: #ffffff;
+  font-size: 40px;
+ 
+}
+
+     /* Fade out effect */
+     .fade-out {
+      opacity: 0;
+    }
+
+    /* Fade in effect */
+    .fade-in {
+      opacity: 1;
+    }
+
+
+
+   

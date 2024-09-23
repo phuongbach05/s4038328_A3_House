@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+</head>
+<body>
+    <div id="preloader">
+        <span id="countdown">100</span>
+    </div>
+    
+    <div id="menuinside" style="display: none;">
+        <div class="menu">
+            <a id="logomenu4" href="index4.html"></a>
+            <a id="logomenu2" href="index.html"></a>
+        </div>
+       <h1>About</h1>
+        <p>Explore our interactive media experience that delves into the small houses of Hong Kong, revealing the living conditions and vibrant culture of its residents. Through engaging visuals and immersive storytelling, this project invites you to witness the ingenuity and resilience of those navigating urban life in one of the world's most densely populated cities. Discover the unique stories and rich traditions that define the essence of Hong Kong, and gain a deeper understanding of its communities.</p>
+    
+    </div>
+
+    <script src="sketch.js"></script>
+    <script>
+     document.getElementById('logomenu').addEventListener('click', function() {
+    window.location.href = 'index.html';
+});
+    </script>
+</body>
+</html>

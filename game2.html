@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+</head>
+<body>
+    <div class="menu">
+        <a id="logomenu4" href="index4.html"></a>
+        <div id="logomenu"></div>
+     
+    </div>
+    <div id="room">
+    <div id="room1"></div>
+    <div class="subtitle">
+        <p id="changingText">Living in this tiny room, it’s hard to breathe, and every day feels like a struggle</p>
+    </div>
+    </div>
+   
+
+    <script src="sketch5.js"></script>
+    <script>
+      // Add event listener to transition on logo menu click
+      document.getElementById('logomenu').addEventListener('click', function() {
+            window.location.href = 'index2.html'; // Transition to the desired page
+        });
+
+        const phrases = [
+        "Living in this tiny room, it’s hard to breathe, and every day feels like a struggle",
+        "I work so much just to make ends meet, but it never feels enough.",
+        "I hope that one day, things will change for the better."
+      ];
+
+      // Current index to keep track of which phrase is being shown
+      let currentIndex = 0;
+
+      // Function to change the text when #room1 is clicked
+      document.getElementById('room1').addEventListener('click', function() {
+          const textElement = document.getElementById('changingText');
+
+          // Fade out
+          textElement.classList.remove('fade-in');
+          textElement.classList.add('fade-out');
+
+          // Change text after a short delay
+          setTimeout(() => {
+              // Increment the index and reset to 0 if it exceeds the number of phrases
+              currentIndex = (currentIndex + 1) % phrases.length;
+
+              // Set the new text
+              textElement.textContent = phrases[currentIndex];
+
+              // Fade in
+              textElement.classList.remove('fade-out');
+              textElement.classList.add('fade-in');
+          }, 500); // Duration of the fade-out
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+</head>
+<body>
+  <div class="menu">
+    <a id="logomenu4" href="index4.html"></a>
+    <div id="logomenu"></div>
+    
+</div>
+  <div id="scoreboard">Score: 0</div>
+  <div id="timer">Time Left: 30s</div>
+  <div id="game-over">Game Over!<br>Score: 0</div>
+  <button id="restart-button" onclick="startGame()">Restart</button>
+
+    <body>
+      
+   
+
+
+    <script src="sketch4.js"></script>
+    <script>
+      // Add event listener to transition on logo menu click
+      document.getElementById('logomenu').addEventListener('click', function() {
+            window.location.href = 'index2.html'; // Transition to the desired page
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pausing Video</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="video-container">
+        <div class="menu">
+            <a id="logomenu3" href="index.html"></a>
+            <div id="logomenu"></div>
+            
+        </div>
+        <video id="myVideo" muted autoplay>
+            <source src="Comp_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div id="text-preview"></div>
+    </div>
+
+    <audio id="background-music" src="music.mp3" preload="auto"></audio>
+    <script >
+
+     // Play background music when the page loads
+     window.addEventListener('load', function() {
+            const music = document.getElementById('background-music');
+            music.play().catch(error => {
+                console.log('Audio play prevented:', error);
+            });
+        });
+   // Add event listener to transition on logo menu click
+   document.getElementById('logomenu').addEventListener('click', function() {
+            window.location.href = 'index2.html'; // Transition to the desired page
+        });
+
+const video = document.getElementById('myVideo');
+const textPreview = document.getElementById('text-preview');
+let currentStep = 0;
+const totalSteps = 2; // Two steps: half and full
+let segmentDuration;
+
+// Wait for video metadata to be loaded to get the duration
+video.addEventListener('loadedmetadata', () => {
+    segmentDuration = video.duration / totalSteps; // Half the video duration
+    playVideoSegment(); // Start playing the first segment
+});
+
+// Function to play video segments and automatically pause
+function playVideoSegment() {
+    if (currentStep < totalSteps) {
+        textPreview.classList.remove('visible'); // Hide the text preview while playing the video
+        video.play();
+
+        // Automatically pause the video after the segment duration (half or full)
+        setTimeout(() => {
+            video.pause(); // Pause the video
+            currentStep++;
+            showTextPreview(); // Show loading text with fade-in effect when paused
+        }, segmentDuration * 1000); // Convert segmentDuration to milliseconds
+    } else {
+        window.location.href = 'index4.html'; // Redirect to next page after video finishes
+    }
+}
+
+// Function to show the text preview with smooth fade-in effect
+function showTextPreview() {
+    textPreview.style.display = 'block';
+
+    // Change text based on current step
+    if (currentStep === 1) {
+        textPreview.innerHTML = `In Hong Kong, each year spent working feels like a heartbeat, a reminder that dreams of home often require relentless dedication and sacrifice.`;
+    } else if (currentStep === 2) {
+        textPreview.innerHTML = ` Are you ready to explore one of these? `;
+    }
+
+    // Apply blur effect to the video
+    video.classList.add('blur');
+
+    // Add a CSS class to apply the smooth fade-in effect
+    setTimeout(() => {
+        textPreview.classList.add('visible'); // Fade-in the text
+    }, 100); // Small delay to trigger CSS transition
+
+    // Add a click event to continue the video when clicking anywhere
+    document.addEventListener('click', continueVideo);
+}
+
+// Function to continue the video after clicking
+function continueVideo() {
+    document.removeEventListener('click', continueVideo); // Remove the click listener
+    textPreview.classList.remove('visible'); // Fade-out the text
+
+    // Remove blur effect
+    video.classList.remove('blur');
+
+    setTimeout(() => {
+        textPreview.style.display = 'none'; // Hide after fade-out
+        playVideoSegment(); // Play the next video segment
+    }, 600); // Delay to allow the fade-out to complete before resuming video
+}
+
+    </script>
+</body>
+</html>
+
